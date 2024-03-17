@@ -1,0 +1,23 @@
+#Marko's lf config
+
+
+set icons
+set cursorpreviewfmt "\033[7m"
+
+#delete with cowsay
+cmd delete ${{
+	~/.config/lf/cow_delete "$fx"	
+}}
+
+#keybinds
+map a push %mkdir<space>
+map t push %touch<space>
+map D delete
+map C %vim "$fx"
+
+#opener
+
+
+#file/image preview
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_clean

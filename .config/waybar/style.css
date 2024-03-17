@@ -1,0 +1,270 @@
+* {
+    font-family: Iosevka, Material Design Icons;
+    font-size: 14px;
+}
+
+@define-color dark                  #504945;
+@define-color darkFG                #d5c4a1;
+@define-color blue                  #458588;
+@define-color green                 #98971A;
+@define-color green2                #B8BB26;
+@define-color yellow                #FABD2F;
+@define-color darkyellow            #d79921;
+@define-color red                   #FB4934;
+@define-color darkred               #cc241d;
+@define-color orange                #d65d0e;
+@define-color brightorange          #fe8019;
+@define-color magenta               #D3869B;
+@define-color purple                #b16286;
+@define-color aqua                  #689D6A;
+@define-color lightblue             #83A598;
+@define-color white                 #EBDBB2;
+@define-color black                 #282828;
+@define-color gray                  #a89984;
+
+
+
+window#waybar {
+    background-color: transparent;
+}
+
+#workspaces {
+    background-color: transparent;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 25px;
+}
+
+#workspaces button {
+    box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    background-color: @white;
+    border-radius: 15px;
+    margin-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-right: 10px;
+    color: @black;
+    font-weight: bold;
+    transition: background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+                box-shadow 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+                padding 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#workspaces button.active {
+    padding-right: 30px;
+    box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    padding-left: 30px;
+    background-color: @purple;
+    background-size: 300% 300%;
+    color: @black;
+    font-weight: bold;
+    transition: background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+                box-shadow 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+                padding 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* override gtk theme */
+#workspaces button:hover {
+    background: @purple;
+    border-color: transparent;
+    font-weight: bold;
+}
+
+#workspaces button:not(.active):hover {
+    background-color: @lightblue;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+#custom-weather,
+#custom-audio_idle_inhibitor,
+#custom-spotify,
+#language,
+#custom-notification,
+#custom-updates,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#custom-expand,
+#custom-cycle_wall,
+#custom-ss,
+#custom-dynamic_pill,
+#mpd {
+    padding: 0 10px;
+    border-radius: 15px;
+    background-color: @green;
+    color: @black;
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-weight: bolder;
+}
+
+#custom-cycle_wall {
+    background: @red;
+    color: #141111;
+    background-size: 500% 500%;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+#language {
+    background-color: @darkred;
+}
+
+#custom-notification {
+    font-family: "NotoSansMono Nerd Font";
+    background-color: @lightblue;
+}
+
+#custom-weather {
+    background-color: #3c3836;
+    color: @darkFG;
+    font-family: Noto Color Emoji;
+    font-family: Iosevka;
+}
+
+#clock {
+    background: linear-gradient(45deg, @blue, @white, @purple);
+    color: @black;
+    background-size: 300% 300%;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 0.577);
+    animation: gradient 15s ease infinite;
+    font-size: 15px;
+    padding-top: 2px;
+    padding-right: 21px;
+    font-weight: bolder;
+    padding-left: 20px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#custom-updates {
+    background-color: @dark;
+    color: @darkFG;
+}
+
+#bluetooth {
+    padding: 0 10px;
+    border-radius: 15px;
+    color: @black;
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-weight: bolder;
+    background-color: @brightorange;
+}
+
+#bluetooth.off {
+    background-color: @orange;
+}
+
+#battery.charging,
+#battery.plugged {
+    background-color: @lightblue;
+    color: @black;
+}
+
+#battery {
+    background-color: @green2;
+    color: @black;
+    font-weight: bolder;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@keyframes blink {
+    to {
+        background-color: @red;
+        color: @black;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @yellow;
+    color: @black;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    background: @magenta;
+    background-size: 300% 300%;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    color: @black;
+}
+
+
+#backlight {
+    color: @black;
+    background-color: @yellow;
+    font-weight: bolder;
+}
+
+#network {
+    color: @black;
+    font-weight: bolder;
+}
+
+#network.disabled {
+    background-color: @aqua;
+}
+
+#network.disconnected {
+    background: @aqua;
+    color: @black;
+    font-weight: bolder;
+    padding-top: 3px;
+    padding-right: 11px;
+}
+
+#network.linked,
+#network.wifi {
+    background-color: @aqua;
+    color: @black;
+}
+
+#network.ethernet {
+    background-color: @white;
+}
+
+#pulseaudio {
+    background-color: @blue;
+    color: @black;
+    font-weight: bolder;
+}
+
+#pulseaudio.muted {
+    background-color: @blue;
+    font-weight: bolder;
+}
