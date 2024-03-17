@@ -1,0 +1,55 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads]
+
+[scratchpads.calendar]
+command = "kitty --class calendar -e calcure"
+unfocus = "hide"
+animation = "fromTop"
+
+[scratchpads.weather]
+command = "kitty --class weather --hold sh -c '~/.config/hypr/scripts/weather.sh'"
+unfocus = "hide"
+animation = "fromTop"
+
+[scratchpads.lf]
+command = "kitty --class scratchpad" 
+margin = 50
+animation = "fromTop"
+
+[scratchpads.terminal]
+command = "kitty --class scratchpad -e ~/.config/hypr/scripts/tmux.sh"
+margin = 50
+animation = "fromTop"
+
+[scratchpads.tuido]
+command = "kitty --class scratchpad -e tuido"
+margin = 50
+animation = "fromTop"
+
+[scratchpads.spotify]
+command = "spotify"
+margin = 50
+unfocus = "hide"
+animation = "fromBottom"
+lazy = true
+
+[scratchpads.nvim]
+command = "kitty --class neovim -o window_padding_width=0 nvim"
+lazy = true
+animation = "fromTop"
+margin = 0
+size = "100% 100%"
+
+[scratchpads.qbittorrent]
+command = "qbittorrent"
+margin = 50
+animation = "fromRight"
+size = "80% 85%"
+unfocus = "hide"
+lazy = true
+class = "org.qbittorrent.qBittorrent"
+class_match = true
+process_tracking = false
+
