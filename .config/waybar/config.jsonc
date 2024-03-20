@@ -137,7 +137,7 @@
         "format-plugged": "{capacity}% {icon}",
         "format-full": "{capacity}% 󱈑",
         "format-icons": ["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁", "󰂂"],
-        "on-click": ".config/rofi/powermenu/type-5/powermenu.sh",
+        "on-click": "wlogout --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css -p layer-shell -b 6 -c 0 -r 0",
         "tooltip": false
     },
 

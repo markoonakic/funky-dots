@@ -1,0 +1,90 @@
+* {
+    background-image: none;
+    font-size: 20px;
+}
+
+window {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+button {
+    color: #ebdbb2;
+    background-color: #282828;
+    outline-style: none;
+    border: none;
+    border-width: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+    animation: gradient_f 20s ease-in infinite;
+}
+
+button:focus {
+    background-color: #83a598;
+    background-size: 40%;
+}
+
+button:hover {
+    background-color: #458588;
+    background-size: 50%;
+    border-radius: 10px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+button:hover#lock {
+    border-radius: 10px;
+    margin: 160px 0 160px 160px;
+}
+
+button:hover#logout,
+button:hover#suspend,
+button:hover#shutdown,
+button:hover#hibernate {
+    border-radius: 10px;
+    margin: 160px 0 160px 0;
+}
+
+button:hover#reboot {
+    border-radius: 10px;
+    margin: 160px 160px 160px 0;
+}
+
+#lock {
+    background-image: image(url("/home/marko/.config/wlogout/icons/lock_white.png"));
+    border-radius: 10px 0 0 10px;
+    margin: 180px 0 180px 180px;
+}
+
+#logout {
+    background-image: image(url("/home/marko/.config/wlogout/icons/logout_white.png"));
+    border-radius: 0;
+    margin: 180px 0 180px 0;
+}
+
+#suspend {
+    background-image: image(url("/home/marko/.config/wlogout/icons/suspend_white.png"));
+    border-radius: 0;
+    margin: 180px 0 180px 0;
+}
+
+#shutdown {
+    background-image: image(url("/home/marko/.config/wlogout/icons/shutdown_white.png"));
+    border-radius: 0;
+    margin: 180px 0 180px 0;
+}
+
+#hibernate {
+    background-image: image(url("/home/marko/.config/wlogout/icons/hibernate_white.png"));
+    border-radius: 0;
+    margin: 180px 0 180px 0;
+}
+
+#reboot {
+    background-image: image(url("/home/marko/.config/wlogout/icons/reboot_white.png"));
+    border-radius: 0 10px 10px 0;
+    margin: 180px 180px 180px 0;
+}
