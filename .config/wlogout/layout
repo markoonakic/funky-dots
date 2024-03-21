@@ -21,21 +21,21 @@
 
 {
     "label" : "shutdown",
-    "action" : "systemctl poweroff",
+    "action" : "shutdown now",
     "text" : "Shutdown",
     "keybind" : "s"
 }
 
 {
     "label" : "hibernate",
-    "action" : "systemctl hibernate",
+    "action" : "hibernate now",
     "text" : "Hibernate",
     "keybind" : "h"
 }
 
 {
     "label" : "reboot",
-    "action" : "systemctl reboot",
+    "action" : "reboot now",
     "text" : "Reboot",
     "keybind" : "r"
 }

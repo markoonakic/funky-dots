@@ -22,33 +22,34 @@ button {
     animation: gradient_f 20s ease-in infinite;
 }
 
-button:focus {
+button:hover {
     background-color: #83a598;
     background-size: 40%;
+    
 }
 
-button:hover {
-    background-color: #458588;
+button:focus {
+    background-color: #83a598;
     background-size: 50%;
     border-radius: 10px;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
 }
 
-button:hover#lock {
+button:focus#lock {
     border-radius: 10px;
     margin: 160px 0 160px 160px;
 }
 
-button:hover#logout,
-button:hover#suspend,
-button:hover#shutdown,
-button:hover#hibernate {
+button:focus#logout,
+button:focus#suspend,
+button:focus#shutdown,
+button:focus#hibernate {
     border-radius: 10px;
     margin: 160px 0 160px 0;
 }
 
-button:hover#reboot {
+button:focus#reboot {
     border-radius: 10px;
     margin: 160px 160px 160px 0;
 }

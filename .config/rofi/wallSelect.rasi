@@ -1,0 +1,115 @@
+// Config //
+configuration {
+    modi:                        "drun";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    font:                        "FiraCode Nerd Font Mono Medium 10";
+}
+
+
+
+// Main //
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    width:                       100%;
+    transparency:                "real";
+    cursor:                      "default";
+    spacing:                     0px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               0px;
+    border-color:                transparent;
+    background-color:            transparent;
+}
+mainbox {
+    enabled:                     true;
+    children:                    [ "inputbar", "listview" ];
+    background-color:            rgba(40, 40, 40, 0.9);
+}
+
+// Input bar //
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px 200px 0px 42%;
+    border-radius:               20px;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    padding:                     12px 0px;
+    border-radius:               8px;
+    background-color:            transparent;
+    text-color:                  #ebdbb2;
+    str:                         "";
+}
+entry {
+    enabled:                     true;
+    padding:                     12px 0px;
+    border:                      0px;
+    background-color:            transparent;
+    text-color:                  #ebdbb2;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+}
+
+
+// Lists //
+listview {
+    enabled:                     true;
+    columns:                     3;
+    lines:                       1;
+    spacing:                     50px;
+    padding:                     0px 60px 50px 60px;
+    cycle:                       true;
+    dynamic:                     false;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     true;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  #ebdbb2;
+    border:                      0px;
+}
+
+
+// Elements //
+
+element {
+    enabled:                     true;
+    orientation:                 horizontal;
+    border-radius:               40px;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  #ebdbb2;
+    border:                      0px;
+}
+@media(max-aspect-ratio: 1.8) {
+    element {
+        orientation:             vertical;
+    }
+}
+element selected.normal {
+    background-color:            #83a598;
+    text-color:                  #282828;
+}
+element-icon {
+    size:                        33%;
+    cursor:                      inherit;
+    border-radius:               35px;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
