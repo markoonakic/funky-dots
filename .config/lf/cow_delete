@@ -5,31 +5,52 @@
 # Usage: change the code inside your lfrc delete function to "/home/cowDelete.sh $fx", change the /home/cowDelete.sh to the path of this file
 
 animal="small"
-# clear
+IFS=$'\n'  # Set the input field separator to newline to handle lf's format
 
-echo -e "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n${lightPurple}"
-for file in "$@"
+# Define color variables
+lightPurple="\e[35m"  # Light purple color
+lightBlue="\e[33;1m"  # Light blue color
+
+
+echo -e "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n${lightPurple}"
+
+# Loop through each file path passed as an argument
+for file in $@
 do
-	fileName=$(basename "$file")
 
-	if [ -d "$file" ]
-	then
-		echo -e " $fileName  $(du -sh "$file" | awk '{print $1}')"
-		continue
-	fi
+    # Get the base name of the file
+    fileName=$(basename "$file")
 
-	case "${fileName##*.}" in
-		sh) echo -e " $fileName  $(du -sh "$file" | awk '{print $1}')" ;;
-		svg|png|jpg|JPG) echo -e " $fileName  $(du -sh "$file" | awk '{print $1}')" ;;
-		*) echo -e " $fileName  $(du -sh "$file" | awk '{print $1}')" ;;
-	esac
+    # Check if the file exists
+    if [ -e "$file" ]
+    then
+        # Display file information
+        if [ -d "$file" ]; then
+            echo -e " $fileName  $(du -sh "$file" 2>/dev/null | awk '{print $1}')"
+        else
+            case "${fileName##*.}" in
+                sh) echo -e " $fileName  $(du -sh "$file" 2>/dev/null | awk '{print $1}')" ;;
+                svg|png|jpg|JPG) echo -e " $fileName  $(du -sh "$file" 2>/dev/null | awk '{print $1}')" ;;
+                *) echo -e " $fileName  $(du -sh "$file" 2>/dev/null | awk '{print $1}')" ;;
+            esac
+        fi
+    else
+        # Display an error message if the file doesn't exist
+        echo "File not found: $file"
+    fi
 done | cowsay -f "$animal" -n
 
 echo -e "${lightBlue}"
-read -p "${bold}So you wanna delete them?[Y/n]: " ans
+read -p "So you wanna delete them?[Y/n]: " ans
 ans=${ans:-Y}  # Set default value to "Y" if no input is provided
 [ "$ans" = "Y" ] && 
-	for file in "$@"
-	do
-		rm -rf "$file"
-	done
+    for file in $@
+    do
+        # Check if the file exists before attempting to delete it
+        if [ -e "$file" ]
+        then
+            rm -rf "$file"
+        else
+            echo "File not found: $file"
+        fi
+    done
