@@ -10,7 +10,7 @@
     "margin-bottom":-11,
     //"margin-top":5,
     "modules-left": ["hyprland/workspaces", "custom/spotify"],
-    "modules-right": ["cpu", "custom/updates", "network", "pulseaudio", "bluetooth","backlight", "hyprland/language", "custom/notification", "battery"],
+    "modules-right": ["cpu", "custom/updates", "custom/wireguard", "network", "pulseaudio", "bluetooth","backlight", "hyprland/language", "custom/notification", "battery"],
     "modules-center": ["custom/weather", "clock"],
 
 
@@ -30,6 +30,13 @@
         "exec": "~/.config/hypr/scripts/arch_update.sh",
         "return-type": "json",
         "on-click": ""
+    },
+
+    "custom/wireguard": {
+        "format": "{}<big> 嬨</big>",
+        "exec": "~/.config/waybar/wireguard-rofi-waybar/wireguard.sh short",
+        "interval": 60,
+        "return-type": "json"
     },
 
     "custom/notification": {

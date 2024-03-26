@@ -22,6 +22,7 @@ animation = "fromTop"
 command = "kitty --class scratchpad -e ~/.config/hypr/scripts/tmux.sh"
 margin = 50
 animation = "fromTop"
+lazy = false
 
 [scratchpads.tuido]
 command = "kitty --class scratchpad -e tuido"
