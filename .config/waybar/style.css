@@ -17,6 +17,7 @@
 @define-color magenta               #D3869B;
 @define-color purple                #b16286;
 @define-color aqua                  #689D6A;
+@define-color brightaqua            #8ec07c;
 @define-color lightblue             #83A598;
 @define-color white                 #EBDBB2;
 @define-color black                 #282828;
@@ -138,6 +139,10 @@ window#waybar {
     color: @darkFG;
     font-family: Noto Color Emoji;
     font-family: Iosevka;
+}
+
+#custom-wireguard {
+    background-color: @brightaqua;
 }
 
 #clock {

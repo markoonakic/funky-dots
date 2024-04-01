@@ -14,9 +14,10 @@ unfocus = "hide"
 animation = "fromTop"
 
 [scratchpads.lf]
-command = "kitty --class scratchpad" 
+command = "kitty --class scratchpad -e lf" 
 margin = 50
 animation = "fromTop"
+lazi = true
 
 [scratchpads.terminal]
 command = "kitty --class scratchpad -e ~/.config/hypr/scripts/tmux.sh"

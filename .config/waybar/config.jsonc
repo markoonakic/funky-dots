@@ -33,7 +33,7 @@
     },
 
     "custom/wireguard": {
-        "format": "{}<big> 嬨</big>",
+        "format": "{}<big> 🐉</big>",
         "exec": "~/.config/waybar/wireguard-rofi-waybar/wireguard.sh short",
         "interval": 60,
         "return-type": "json"
