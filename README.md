@@ -1,14 +1,12 @@
-# FUNKY DOTFILES
+# These were the dotfiles of my first Arch Linux system, everything was configured from scratch and daily driven from day 1!
 
-```
-    (\ /)
-    ( . .)
-    c(*)(*)
-```
+
+## FUNKY DOTFILES
+
 
 The files are managed using gnu stow, more info here: https://www.youtube.com/watch?v=y6XCebnB9gs&t=370s
 
-## ZSH setup
+### ZSH setup
 
 autosuggesions plugin
 
@@ -22,7 +20,7 @@ zsh-autocomplete plugin
 
 `git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete`
 
-## SDDM theme
+### SDDM theme
 
 Requires the following packages:
 
